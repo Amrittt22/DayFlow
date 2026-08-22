@@ -1,0 +1,28 @@
+# Dayflow Full-Stack Delivery Checklist
+
+- [x] Upgrade the project to include backend, database, and user authentication.
+- [x] Define secure role-aware data models for employees, attendance, leave requests, profiles, and payroll records.
+- [x] Implement backend endpoints and authorization rules for employee and HR workflows.
+- [x] Replace prototype interactions with live data loading and mutation flows.
+- [x] Convert the public product preview into read-only content that routes operational actions to the authenticated workspace.
+- [x] Validate role access, workflow outcomes, and production build readiness.
+- [x] Save a publish-ready checkpoint and provide publication instructions.
+- [x] Define a purposeful 3D motion system that remains accessible and respects reduced-motion preferences.
+- [x] Add animated 3D visual layers to the Dayflow landing and authenticated workspace without replacing live HRMS data flows.
+- [x] Verify responsive motion behavior, role-scoped backend access, tests, and the production build.
+- [x] Save a new publish-ready checkpoint for the 3D animated Dayflow experience.
+- [x] Add role-scoped database models and backend workflows for announcements and payroll management.
+- [x] Build employee announcement and Admin / HR payroll tool interfaces with live database data.
+- [x] Extend the 3D motion system to communicate tool state, review, and save actions.
+- [x] Validate feature tools, permissions, tests, responsiveness, and production build.
+- [x] Save a publish-ready checkpoint for the integrated HR feature tools.
+- [x] Attempt and inspect the requested Hero 35 component; the registry entry was unavailable, so its documented pattern was used as the reference.
+- [x] Adapt Hero 35 into a user-friendly Dayflow landing section with 3D motion and live-workspace calls to action.
+- [x] Verify Hero 35 integration across desktop and mobile with tests and a production build.
+- [x] Save a publish-ready checkpoint for the Hero 35 integration.
+- [x] Recreate the unavailable Hero 35 experience as a compatible Dayflow 3D hero with live HRMS calls to action.
+- [x] Define a role-scoped HR request data model and request-center workflow.
+- [x] Implement secure database-backed HR request submission, listing, and status resolution procedures.
+- [x] Build a responsive, modern request-center interface and refresh relevant workspace navigation.
+- [x] Validate request workflows, permissions, desktop/mobile usability, tests, and production build.
+- [x] Save a publish-ready checkpoint for the modern Dayflow request-center update.

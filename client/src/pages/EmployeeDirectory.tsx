@@ -1,0 +1,11 @@
+import { useAuth } from "@/_core/hooks/useAuth";
+import DashboardLayout from "@/components/DashboardLayout";
+import { trpc } from "@/lib/trpc";
+import { Loader2, UsersRound } from "lucide-react";
+
+export default function EmployeeDirectory() {
+  const { user, isAuthenticated } = useAuth();
+  const directory = trpc.hr.listEmployees.useQuery(undefined, { enabled: isAuthenticated && user?.role === "admin" });
+
+  return <DashboardLayout><div className="dayflow-live-workspace mx-auto max-w-6xl pb-12 pt-2"><div className="mb-7 border-b border-[#172336]/10 pb-6"><p className="eyebrow">Admin / HR</p><h1 className="mt-2 font-[DM_Serif_Display] text-4xl tracking-[-0.045em]">Employee directory</h1><p className="mt-2 text-sm text-[#65717d]">A secure view of profiles registered in your Dayflow workspace.</p></div>{user?.role !== "admin" ? <article className="paper-card bg-white"><p className="text-sm font-bold">This page is available to Admin / HR users only.</p></article> : directory.isLoading ? <div className="grid min-h-56 place-items-center"><Loader2 className="h-7 w-7 animate-spin text-[#c98708]" /></div> : <article className="paper-card motion-card relative overflow-hidden bg-white"><div className="relative z-10 flex items-center justify-between border-b border-[#172336]/10 pb-5"><div><p className="eyebrow">Registered profiles</p><p className="mt-2 text-sm text-[#65717d]">Profile data updates when each person signs into Dayflow.</p></div><UsersRound className="h-5 w-5 text-[#c98708]" /></div><div className="relative z-10 divide-y divide-[#172336]/10">{directory.data?.length ? directory.data.map(employee => <div key={employee.id} className="grid gap-2 py-4 text-sm sm:grid-cols-[1.2fr_1fr_1fr_auto] sm:items-center"><div><p className="font-bold">{employee.fullName}</p><p className="mt-1 text-xs text-[#65717d]">{employee.employeeCode}</p></div><p className="text-[#65717d]">{employee.department || "Department not set"}</p><p className="text-[#65717d]">{employee.jobTitle || "Team member"}</p><span className={`status-pill status-pill--${employee.active ? "sage" : "navy"}`}>{employee.active ? "Active" : "Inactive"}</span></div>) : <p className="py-8 text-sm text-[#65717d]">No employee profiles are registered yet.</p>}</div></article>}</div></DashboardLayout>;
+}
