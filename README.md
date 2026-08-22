@@ -110,7 +110,7 @@ Dayflow follows a custom *Paper Motion* design system.
 ### Database
 
 - Drizzle ORM
-- MySQL
+- MongoDB
 
 ### Development
 
